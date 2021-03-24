@@ -34,4 +34,4 @@ package.json (a)
   },
 npm i @types/express-handlebars
 npm i @types/mongoose
-	
+npm i express-favicon --save

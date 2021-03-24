@@ -7,6 +7,7 @@ import IndexRoutes from './routes';//automaticamente sabe que debe impoertar de 
 import BooksRoutes from './routes/books';
 //inializaciones
 const app= express()
+const favicon = require('express-favicon')
 import './database'; 
 
 //Settings
@@ -24,6 +25,7 @@ app.set('view engine','.hbs');//ahora lo llamamos anteriormente era solo configu
 //Middlewares
 app.use(express.json());//resivir los formatos json
 app.use(express.urlencoded({extended:false}));//para enteder los formularios de html
+app.use(favicon(__dirname + '/public/logo/logo-ico.ico'));
 
 //Routes
 app.use('/', IndexRoutes)
