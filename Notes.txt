@@ -1,0 +1,37 @@
+Typescript
+
+npm init -y
+npm i express express-handlebars mongoose
+sudo npm install -g typescript
+tsc --init
+tsconfig.json (a)
+	"target": "es6",
+	"outDir": "./build/src",
+	"moduleResolution": "node",
+	"esModuleInterop": true,
+	//al final de todo agregar
+	,"include": ["./src/**/*"],
+	"exclude": ["node_modules"]
+npm i @types/express -D
+tsc //para pasar codigo a js 
+npm i typescript -D
+npm i ts-node -D
+npm i nodemon -D
+nodemon.json (a)
+	{
+	"watch":["src"],
+	"ext":"ts",
+	"ignore":["src/**/*.spec.ts"],
+	"exec":"ts-node ./src/index.ts"
+	}
+package.json (a)
+  "scripts": {
+    "ts:node": "ts-node src/index.ts",
+    "clean": "rm -rf build",
+    "build": "tsc",
+    "start": "node build/src",
+    "dev":"nodemon"
+  },
+npm i @types/express-handlebars
+npm i @types/mongoose
+	
